@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset name="93Digital Ruleset">
+  <description>A custom set of rules to check for a 93Digital WordPress project</description>
+
+  <!-- Don't worry about files that don't contain any code -->
+  <rule ref="Internal.NoCodeFound">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Internal exceptions (often occur on minified files) -->
+  <rule ref="Internal.Tokenizer.Exception">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Allow short array syntax -->
+  <rule ref="Generic.Arrays.DisallowShortArraySyntax.Found">
+    <severity>0</severity>
+  </rule>
+
+  <rule ref="Squiz.PHP.CommentedOutCode"/>
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+
+  <rule ref="WordPress">
+
+    <!-- Yoda conditions, people often forget. -->
+    <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+
+    <!-- Disable "forcing writing" comments (https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29#comments-rules) -->
+    <exclude name="Squiz.Commenting.FunctionComment.Missing" />
+
+    <rule ref="WordPress.PHP.DiscouragedFunctions.Discouraged">
+       <severity>0</severity>
+    </rule>
+
+  </rule>
+</ruleset>
