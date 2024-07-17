@@ -1,4 +1,5 @@
 node_modules
 build
-style.css
-package-lock.json
+./style.css
+./style.css.map
+./package-lock.json
